@@ -1,7 +1,10 @@
-using FontAwesome.Sharp;
+﻿using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
+using System.Drawing;   
+
+
+
 namespace IT13_Admin_Page
 {
     public partial class AdminDashboard : Form
@@ -18,6 +21,17 @@ namespace IT13_Admin_Page
             this.BackColor = Color.FromArgb(62, 64, 80);
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
+
+            // 🔹 Load Dashboard by default
+            LoadPage(new Dashboard());
+        }
+
+        // 🔹 Method to load UserControls into mainPanel
+        private void LoadPage(UserControl page)
+        {
+            panelMain.Controls.Clear();   // Clear old content
+            page.Dock = DockStyle.Fill;   // Make it fill the panel
+            panelMain.Controls.Add(page); // Add new page
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -134,11 +148,13 @@ namespace IT13_Admin_Page
                 case FormWindowState.Maximized:
                     this.Padding = new Padding(0, 8, 8, 0);
                     break;
+
                 case FormWindowState.Normal:
                     if (this.Padding.Top != borderSize)
                         this.Padding = new Padding(borderSize);
                     break;
             }
+        }
 
 
         private void menu_BTN_Click(object sender, EventArgs e)
@@ -172,9 +188,29 @@ namespace IT13_Admin_Page
                     menuButton.Text = "   " + menuButton.Tag.ToString();
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 10, 0, 0);
-
                 }
             }
+        }
+
+        // 🔹 Example sidebar button events
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            LoadPage(new Dashboard());
+        }
+
+        private void btnServices_Click(object sender, EventArgs e)
+        {
+            LoadPage(new ServicesOffered());
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            LoadPage(new CustomerManagement());
+        }
+
+        private void dashboardBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

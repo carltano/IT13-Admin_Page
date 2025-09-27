@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace IT13_Admin_Page
+{
+    public partial class BookAppointment : UserControl
+    {
+        public BookAppointment()
+        {
+            InitializeComponent();
+        }
+
+        private void BookAppointment_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

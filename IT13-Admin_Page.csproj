@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>IT13_Admin_Page.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

@@ -126,10 +126,7 @@ namespace IT13_Admin_Page
         private void Form1_Load(object sender, EventArgs e)
         {
             AdjustForm();
-
         }
-
-        //Private Methods
         private void AdjustForm()
         {
             switch (this.WindowState)
@@ -143,7 +140,6 @@ namespace IT13_Admin_Page
                     break;
             }
 
-        }
 
         private void menu_BTN_Click(object sender, EventArgs e)
         {
@@ -163,7 +159,6 @@ namespace IT13_Admin_Page
                     menuButton.Text = "";
                     menuButton.ImageAlign = ContentAlignment.MiddleCenter;
                     menuButton.Padding = new Padding(0);
-
                 }
             }
             //EXPAND MENU
